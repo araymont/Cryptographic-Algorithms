@@ -1,2 +1,2 @@
 # Cryptographic Algorithms
-Programmatic implementations of several cryptographic algorithms
+Programmatic implementations of several cryptographic algorithms, Including encryption
