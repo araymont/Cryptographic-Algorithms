@@ -18,13 +18,30 @@ class Ceaser_Cypher():
                 if(l in phrase):
                     alphabet = self.alphabet_advanced
                     breaks = True
+                    print("yea!")
             if(not breaks):
                 alphabet = self.alphabet
         new_phrase = []
         for i in range(0,len(phrase)):
             loc = alphabet.index(phrase[i])
-            print(loc,(loc+shift),(loc+shift)%26)
-            loc = (loc + shift) % len(self.alphabet)
+            #print(loc,(loc+shift),(loc+shift)%26)
+            loc = (loc + shift) % len(alphabet)
             new_phrase.append(alphabet[loc])
         print("The encrypted phrase is: ",end="")
         print("".join(new_phrase))
+        return new_phrase
+
+
+    def decrypt(self,phrase,shift,alphabet = None):
+        if(alphabet == None):
+            alphabet = self.alphabet_advanced
+        new_phrase = []
+        for i in range(0,len(phrase)):
+            loc = alphabet.index(phrase[i])
+            #print(loc,(loc-shift),(loc+shift)%26)
+            loc = (loc - shift) % len(alphabet)
+            new_phrase.append(alphabet[loc])
+        print("The decrypted phrase is: ",end="")
+        print("".join(new_phrase))
+
+            

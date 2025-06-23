@@ -7,7 +7,8 @@ class tester():
 
     def test_new(self):
         cc = CeaserCypher.Ceaser_Cypher()
-        cc.encrypt(self.phrase,1)
+        encrypted = cc.encrypt(self.phrase,1)
+        cc.decrypt(encrypted,1)
         
 
 t = tester()
