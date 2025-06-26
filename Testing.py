@@ -12,8 +12,9 @@ class tester():
         cc.decrypt(encrypted,1)
 
     def test_new(self):
-        cc = AffineCypher.AffineCypher(3,15)
+        cc = AffineCypher.AffineCypher(4,7)
         encrypted = cc.encrypt(self.phrase)
+        cc.decrypt(encrypted)
         
 
 t = tester()
