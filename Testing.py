@@ -1,4 +1,4 @@
-import CeaserCypher
+import Algorithms.ShiftCypher as ShiftCypher
 
 
 class tester():
@@ -6,7 +6,7 @@ class tester():
         self.phrase = "Hello World!"
 
     def test_new(self):
-        cc = CeaserCypher.Ceaser_Cypher()
+        cc = ShiftCypher.Shift_Cypher()
         encrypted = cc.encrypt(self.phrase,1)
         cc.decrypt(encrypted,1)
         
