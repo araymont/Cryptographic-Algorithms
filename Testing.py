@@ -17,6 +17,11 @@ class tester():
         encrypted = cc.encrypt(self.phrase)
         cc.decrypt(encrypted)
 
+    def test_vigenere(self):
+        cc = VigenereCypher.VigenereCypher()
+        encrypted = cc.encrypt(self.phrase)
+        cc.decrypt(encrypted)
+
     def test_new(self):
         cc = VigenereCypher.VigenereCypher()
         encrypted = cc.encrypt(self.phrase)

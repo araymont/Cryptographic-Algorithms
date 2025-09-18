@@ -2,8 +2,9 @@
 
 
 class VigenereCypher():
-    def __init__(self,key = 'password'):
+    def __init__(self,key = 'password',preserve_spaces=True):
         self.key = []
+        self.preserve_spaces = preserve_spaces
         self.keyphrase=key
         self.alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
         for i in key:
@@ -18,11 +19,12 @@ class VigenereCypher():
         count=0
         for i in phrase:
             if(i not in self.alphabet):
-                loc.append(' ')
-                fin.append(' ')
+                if(self.preserve_spaces):
+                    #loc.append(' ')
+                    fin.append(' ')
             else:
                 val = (self.alphabet.index(i) + self.key[count % (len(self.key)-1)]) % 26
-                loc.append(val)
+                #loc.append(val)
                 fin.append(self.alphabet[val])
                 count+=1
         print(''.join(fin))
@@ -36,11 +38,12 @@ class VigenereCypher():
         count=0
         for i in phrase:
             if(i not in self.alphabet):
-                loc.append(' ')
-                fin.append(' ')
+                if(self.preserve_spaces):
+                    #loc.append(' ')
+                    fin.append(' ')
             else:
                 val = (self.alphabet.index(i) - self.key[count % (len(self.key)-1)]) % 26
-                loc.append(val)
+                #loc.append(val)
                 fin.append(self.alphabet[val])
                 count+=1
         print(''.join(fin))
