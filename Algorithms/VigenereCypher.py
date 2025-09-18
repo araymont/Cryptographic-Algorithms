@@ -9,7 +9,7 @@ class VigenereCypher():
         for i in key:
             val = self.alphabet.index(i)
             self.key.append(val)
-        print(self.key)
+        #print(self.key)
 
     def encrypt(self,phrase):
         fin = []
@@ -21,15 +21,27 @@ class VigenereCypher():
                 loc.append(' ')
                 fin.append(' ')
             else:
-                length=(len(self.key)-1)
-                print(count % length)
                 val = (self.alphabet.index(i) + self.key[count % (len(self.key)-1)]) % 26
                 loc.append(val)
                 fin.append(self.alphabet[val])
-            count+=1
+                count+=1
         print(''.join(fin))
+        return (''.join(fin))
         
 
     def decrypt(self,phrase):
-        pass
+        fin = []
+        phrase = phrase.lower()
+        loc=[]
+        count=0
+        for i in phrase:
+            if(i not in self.alphabet):
+                loc.append(' ')
+                fin.append(' ')
+            else:
+                val = (self.alphabet.index(i) - self.key[count % (len(self.key)-1)]) % 26
+                loc.append(val)
+                fin.append(self.alphabet[val])
+                count+=1
+        print(''.join(fin))
 
