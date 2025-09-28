@@ -1,6 +1,6 @@
-import Algorithms.ShiftCypher as ShiftCypher
-import Algorithms.AffineCypher as AffineCypher
-import Algorithms.VigenereCypher as VigenereCypher
+import Algorithms.ShiftCypher.ShiftCypher as ShiftCypher
+import Algorithms.AffineCypher.AffineCypher as AffineCypher
+import Algorithms.VigenereCypher.VigenereCypher as VigenereCypher
 
 
 class tester():
