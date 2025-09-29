@@ -35,6 +35,30 @@ class FeistalBox():
         for i in expandedBlock:
             preSBox.append(self.xor(i,subkey[count]))
             count+=1
+        return preSBox
 
     def sBoxSubstitution(self,input):
-        pass
+        new=[]
+        for i in range(0,int(len(input)/6)):
+            boxIn1 = (input[i*6],input[((i+1)*6)-1])
+            boxIn2 = input[(i*6)+1:((i+1)*6)-1]
+            new.append(self.sBox(boxIn1,boxIn2))
+        print(new)
+
+    def binaryToDecimal(self,input):
+        val=0
+        for i in range(0,len(input)):
+            if(input[i]=='1'):
+                val+=pow(2,(i+1))
+        return val
+
+    def sBox(self,boxIn1,boxIn2):
+        sBoxDict={
+            (0,0):['0010','1100','0100','0001','0111','1010','1011','0110','1000','0101','0011','1111','1101','0000','1110','1001'],
+            (0,1):['1110','1011','0010','1100','0100','0111','1101','0001','0101','0000','1111','1010','0011','1001','1000','0110'],
+            (1,0):['0100','0010','0001','1011','1010','1101','0111','1000','1111','1001','1100','0101','0110','0011','0000','1110'],
+            (1,1):['1011','1000','1100','0111','0001','1110','0010','1101','0110','1111','0000','1001','1010','0100','0101','0011']
+        }
+        sBoxValue=sBoxDict[boxIn1]
+        return sBoxValue[self.binaryToDecimal(boxIn2)]
+
