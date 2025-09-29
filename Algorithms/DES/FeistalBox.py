@@ -18,7 +18,16 @@ class FeistalBox():
         return newInput
 
     def xor(self,x,y):
-        pass
+        if(x == 1):
+            if(y==1):
+                return 0
+            else:
+                return 1
+        else:
+            if(y==1):
+                return 1
+            else:
+                return 0
 
     def xorFunction(self,expandedBlock,subkey):
         preSBox = []
