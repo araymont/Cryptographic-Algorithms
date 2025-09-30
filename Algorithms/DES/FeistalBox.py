@@ -1,10 +1,18 @@
+import DesKey as DesKey
+
 
 class FeistalBox():
     def __init__(self):
-        pass
+        key = [0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]
+        self.keyGenerator = DesKey(key)
 
     def getResult(self,halfBlock):
-        pass
+        halfBlockExpanded = self.expandInput(halfBlock)
+        subkey = self.keyGenerator.getKey()
+        combined = self.xorFunction(halfBlockExpanded,subkey)
+        substituted = self.sBoxSubstitution(combined)
+        return self.permutation(substituted)
+
 
     def expandInput(self,input):
         newInput=[
@@ -62,3 +70,5 @@ class FeistalBox():
         sBoxValue=sBoxDict[boxIn1]
         return sBoxValue[self.binaryToDecimal(boxIn2)]
 
+    def permutation(self):
+        pass
