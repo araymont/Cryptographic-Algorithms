@@ -1,6 +1,7 @@
 import Algorithms.ShiftCypher.ShiftCypher as ShiftCypher
 import Algorithms.AffineCypher.AffineCypher as AffineCypher
 import Algorithms.VigenereCypher.VigenereCypher as VigenereCypher
+import Algorithms.DES.DES as DES
 
 
 class tester():
@@ -23,9 +24,9 @@ class tester():
         cc.decrypt(encrypted)
 
     def test_new(self):
-        cc = VigenereCypher.VigenereCypher()
-        encrypted = cc.encrypt(self.phrase)
-        cc.decrypt(encrypted)
+        cc = DES.DES()
+        #encrypted = cc.encrypt(self.phrase)
+        #cc.decrypt(encrypted)
         
 
 t = tester()

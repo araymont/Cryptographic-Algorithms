@@ -3,8 +3,16 @@ import DesKey as DesKey
 
 class FeistalBox():
     def __init__(self):
-        key = [0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]
-        self.keyGenerator = DesKey(key)
+        keyString = "EKeyBits"
+        bytedKey=map(bin,bytearray(keyString,'utf8'))
+        bytedKeyArray = []
+        for i in bytedKey:
+            val=i.split('b')
+            val=''.join(val)
+            bytedKeyArray.append(val)
+        fBytedKey = ''.join(bytedKeyArray)
+        #print(fBytedKey,len(fBytedKey))
+        self.keyGenerator = DesKey.DesKey(fBytedKey)
 
     def getResult(self,halfBlock):
         halfBlockExpanded = self.expandInput(halfBlock)
@@ -79,3 +87,6 @@ class FeistalBox():
         for i in indexs:
             newResult.append(substitutedResult[i-1])
         return newResult
+    
+
+box = FeistalBox()
