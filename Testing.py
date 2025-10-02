@@ -2,11 +2,12 @@ import Algorithms.ShiftCypher.ShiftCypher as ShiftCypher
 import Algorithms.AffineCypher.AffineCypher as AffineCypher
 import Algorithms.VigenereCypher.VigenereCypher as VigenereCypher
 import Algorithms.DES.DES as DES
+import Algorithms.DES
 
 
 class tester():
     def __init__(self):
-        self.phrase = "Hello World"
+        self.phrase = "Hello World Hello World Hello World"
 
     def test_shift(self):
         cc = ShiftCypher.Shift_Cypher()
@@ -25,7 +26,7 @@ class tester():
 
     def test_new(self):
         cc = DES.DES()
-        #encrypted = cc.encrypt(self.phrase)
+        encrypted = cc.encrypt(self.phrase)
         #cc.decrypt(encrypted)
         
 
