@@ -60,9 +60,9 @@ class DesKey():
         return self.calcKey()
 
 
-key = [0,1,0,0,1,1,1,0,1,1,1,0,0,0,1,1,1,1,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,1,1,0,1,1,1,0,0,0,1,1,1,1,0,1,0,1,0,0,0,0,0,0,1,0,0,0]
-keygen = DesKey(key)
-print(keygen.getKey())
-print(keygen.getKey())#
-print(keygen.getKey())
-print(keygen.getKey())
+#key = [0,1,0,0,1,1,1,0,1,1,1,0,0,0,1,1,1,1,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,1,1,0,1,1,1,0,0,0,1,1,1,1,0,1,0,1,0,0,0,0,0,0,1,0,0,0]
+#keygen = DesKey(key)
+#print(keygen.getKey())
+#print(keygen.getKey())#
+#print(keygen.getKey())
+#print(keygen.getKey())

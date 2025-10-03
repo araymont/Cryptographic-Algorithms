@@ -1,4 +1,4 @@
-#import FeistalBox as DESFbox
+import FeistalBox as DESFbox
 
 class DES():
     def __init__(self):
@@ -23,12 +23,16 @@ class DES():
         while(len(last) < 64):
             last += '0'
         byteArray[-1] = last
+        encrypted = []
         for i in byteArray:
-            print(len(i),i)
+            #print(len(i),i)
+            encrypted.append(self.encryptRound(i))
         
 
     def encryptRound(self):
-        pass
+        for i in range(0,16):
+            pass
+
 
     def round(self):
         pass

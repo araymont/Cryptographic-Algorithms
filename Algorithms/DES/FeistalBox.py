@@ -89,4 +89,3 @@ class FeistalBox():
         return newResult
     
 
-box = FeistalBox()
